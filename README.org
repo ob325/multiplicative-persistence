@@ -5,8 +5,9 @@
 * Multiplicative persistence
 Take the product of an integer's digits, then iterate until you get a single digit number. The number of iterations is the multiplicative persistence. These functions find the smallest digit of multiplicative persistence n. 
 
-For example, to find the smallest integers up to persistence 5:
+For example, to find the first 5 smallest numbers of persistence n:
 
+#+BEGIN_SRC clojure
 multiplicative-persistence.core> (first-persistences-thru 5)
 ({:i 0, :iterations (0), :persistence 0, :root 0})
 ({:i 10, :iterations (10 0), :persistence 1, :root 0})
@@ -14,11 +15,14 @@ multiplicative-persistence.core> (first-persistences-thru 5)
 ({:i 39, :iterations (39 27 14 4), :persistence 3, :root 4})
 ({:i 77, :iterations (77 49 36 18 8), :persistence 4, :root 8})
 (nil nil nil nil nil)
-
+#+END_SRC
 
 To find the smallest integer of persistence 7:
+
+#+BEGIN_SRC clojure
 multiplicative-persistence.core> (first-persistence-of 7)
 ({:i 68889, :iterations (68889 27648 2688 768 336 54 20 0), :persistence 7, :root 0})
 nil
+#+END_SRC
 
 If you try to go much past that, you're gonna have a bad time. Enjoy. 
